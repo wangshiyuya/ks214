@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .wrap {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            background: #eee;
+        }
+        
+        header {
+            width: 100%;
+            height: 44px;
+            display: flex;
+            box-sizing: border-box;
+            padding: 0 10px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        section {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .top {
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .top dl {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .top dl dt {
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            /*justify-content: space-around;*/
+            border: 1px solid #ccc;
+            padding: 0 15px;
+            border-radius: 50%;
+        }
+        
+        .top dl dd {
+            height: 30px;
+            line-height: 30px;
+        }
+        
+        .box {
+            width: 100%;
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .butn {
+            height: 70px;
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .butn span {
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            /*justify-content: space-around;*/
+            border: 1px solid #ccc;
+            padding: 0 15px;
+            border-radius: 50%;
+        }
+        
+        .butn p {
+            height: 45px;
+            line-height: 45px;
+            text-align: center;
+            /*justify-content: space-around;*/
+            /*border: 1px solid #ccc;*/
+            padding: 0 15px;
+            border-radius: 50%;
+        }
+        
+        button {
+            width: 150px;
+            height: 45px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            background: #eee;
+        }
+        
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <span><</span>
+            <span>无连接</span>
+            <span>三</span>
+        </header>
+        <section>
+            <div class="top">
+                <dl class="active">
+                    <dt>三</dt>
+                    <dd>电源</dd>
+                </dl>
+                <dl>
+                    <dt>三</dt>
+                    <dd>电源</dd>
+                </dl>
+                <dl>
+                    <dt>三</dt>
+                    <dd>电源</dd>
+                </dl>
+                <dl>
+                    <dt>三</dt>
+                    <dd>电源</dd>
+                </dl>
+            </div>
+            <div class="box">
+                滑动控制上下
+            </div>
+            <div class="butn">
+                <span>四</span>
+                <button>←</button>
+                <p></p>
+            </div>
+        </section>
+    </div>
+    <script>
+        var dl = document.querySelectorAll('dl');
+        dl.forEach(function(fil) {
+            console.log(fil)
+            fil.onclick = function() {
+                console.log(dl.length);
+                if (this.className !== 'active') {
+
+                    this.className = 'active';
+                    for (var i = 0; i < dl.length; i++) {
+                        dl[i].className = ' '
+                    }
+                    this.className = 'active';
+                }
+                // for (var i = 0; i < dl.length; i++) {
+                //     if (dl[i] !== this) {
+                //         this.className = ' '
+                //     } else {
+                //         this.className = 'active';
+
+                //     }
+                // }
+                //  dl.forEach(function(fil) {
+
+                //  })
+            }
+        })
+    </script>
+</body>
+
+</html>
